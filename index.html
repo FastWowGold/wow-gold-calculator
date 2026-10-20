@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WoW Gold Price Calculator - Live Quote | FastWoWGold</title>
+<meta name="description" content="Free WoW gold price calculator. Pick your game, server and amount to get a live indicative price quote from FastWoWGold.">
+<link rel="canonical" href="https://fastwowgold.github.io/wow-gold-calculator/">
+<meta name="theme-color" content="#0f1115">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WoW Gold Price Calculator - Live Quote | FastWoWGold">
+<meta property="og:description" content="Pick your game, server and amount to get a live indicative price quote from FastWoWGold.">
+<meta property="og:site_name" content="FastWoWGold">
+<meta property="og:url" content="https://fastwowgold.github.io/wow-gold-calculator/">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where do these prices come from?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Prices are requested live from FastWoWGold each time you change an option, so the quote reflects what the site returns right now." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the quote the final price?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The quote is indicative. The final price is confirmed at checkout on FastWoWGold." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does a server show no quote?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sometimes there is no price available for a server at the moment. Try another server or check again later." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>WoW Gold Price Calculator</h1>
+    <p class="intro">Get a quick, live price quote for in-game currency. Choose a game, search for your server, enter the amount and pick a currency. The quote updates automatically using live prices from <a href="https://fastwowgold.com">FastWoWGold</a>.</p>
+  </header>
+
+  <form class="card" id="form" autocomplete="off" onsubmit="return false">
+    <div class="field">
+      <label for="game">Game</label>
+      <select id="game" disabled><option>Loading...</option></select>
+    </div>
+
+    <div class="field">
+      <label for="server">Server</label>
+      <div class="combo">
+        <input id="server" type="text" role="combobox" aria-expanded="false" aria-controls="server-list"
+               aria-autocomplete="list" placeholder="Type to search servers" disabled>
+        <ul id="server-list" role="listbox" aria-label="Servers" hidden></ul>
+      </div>
+      <p class="hint" id="server-hint" aria-live="polite"></p>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="quantity">Quantity <span id="unit"></span></label>
+        <input id="quantity" type="number" inputmode="numeric" disabled>
+        <p class="hint" id="qty-hint"></p>
+      </div>
+      <div class="field">
+        <label for="currency">Currency</label>
+        <select id="currency" disabled></select>
+      </div>
+    </div>
+  </form>
+
+  <section class="card result" aria-labelledby="result-title">
+    <h2 id="result-title">Your quote</h2>
+    <div id="result" aria-live="polite" aria-atomic="true">
+      <p class="muted">Choose a server and quantity to see a price.</p>
+    </div>
+    <p class="note">Indicative price - final price is confirmed at checkout</p>
+    <a id="buy" class="buy" href="#" aria-disabled="true" tabindex="-1">Buy now on FastWoWGold</a>
+    <p class="note">Most orders complete in 1-30 minutes.</p>
+  </section>
+
+  <section class="faq">
+    <h2>FAQ</h2>
+    <details open><summary>Where do these prices come from?</summary>
+      <p>Prices are requested live from FastWoWGold each time you change an option, so the quote reflects what the site returns right now.</p></details>
+    <details open><summary>Is the quote the final price?</summary>
+      <p>No. The quote is indicative. The final price is confirmed at checkout on FastWoWGold.</p></details>
+    <details open><summary>Why does a server show no quote?</summary>
+      <p>Sometimes there is no price available for a server at the moment. Try another server or check again later.</p></details>
+  </section>
+
+  <footer>
+    <p>Prices provided live by <a href="https://fastwowgold.com">FastWoWGold</a> &middot;
+      <a href="https://fastwowgold.com/support/safe">Safe trading</a> &middot;
+      <a href="https://fastwowgold.com/support/refund">Refund policy</a></p>
+    <p class="muted">Trading in-game currency may violate game publishers' Terms of Service. Use at your own risk.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
