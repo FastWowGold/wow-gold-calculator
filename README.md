@@ -4,6 +4,8 @@ A free, static game currency price calculator. Pick a game, server, quantity and
 
 Live demo: <https://fastwowgold.github.io/wow-gold-calculator/>
 
+[![WoW Gold Calculator showing a live quote](docs/screenshot.png)](https://fastwowgold.github.io/wow-gold-calculator/)
+
 Developer? The same API is wrapped in a tiny npm package: [fastwowgold-quote](https://github.com/FastWowGold/fastwowgold-quote).
 
 ## How it works
