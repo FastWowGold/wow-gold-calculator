@@ -6,7 +6,7 @@ Live demo: <https://fastwowgold.github.io/wow-gold-calculator/>
 
 [![WoW Gold Calculator showing a live quote](docs/screenshot.png)](https://fastwowgold.github.io/wow-gold-calculator/)
 
-Developer? The same API is wrapped in a tiny npm package: [fastwowgold-quote](https://github.com/FastWowGold/fastwowgold-quote).
+Developer? The same API is wrapped in a tiny npm package: [@fastwowgold/quote](https://www.npmjs.com/package/@fastwowgold/quote) ([source](https://github.com/FastWowGold/fastwowgold-quote)).
 
 ## How it works
 
