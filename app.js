@@ -67,6 +67,15 @@
       el.buy.href = '#'; el.buy.setAttribute('aria-disabled', 'true'); el.buy.tabIndex = -1;
     }
   }
+  // The API prices card payment (Stripe, payment method 2) by default, fee included.
+  // Cheaper methods depend on the currency: Zelle and USDC are USD only, Interac e-Transfer is CAD only.
+  var CARD_METHOD_ID = 2;
+  var CHEAPER_METHODS = { USD: 'crypto / Zelle', CAD: 'Interac e-Transfer' };
+  function cardFeeNote(q) {
+    if (q.paymentMethodId !== CARD_METHOD_ID) return '';
+    var cheaper = CHEAPER_METHODS[(q.currency || '').toUpperCase()];
+    return 'Includes card processing fee.' + (cheaper ? ' Lower with ' + cheaper + '.' : '');
+  }
   function showQuote(q) {
     var sym = symbolFor(q.currency);
     // Only plain-unit games (unit is exactly "Gold") get a per-1,000 figure; units like "K Gold" or "M GP" are already scaled.
@@ -79,6 +88,11 @@
     var c = document.createElement('p'); c.className = 'muted';
     text(c, fmt(q.quantity, 0) + ' ' + q.unit + ' on ' + q.serverName);
     el.result.appendChild(a); el.result.appendChild(b); el.result.appendChild(c);
+    var feeNote = cardFeeNote(q);
+    if (feeNote) {
+      var d = document.createElement('p'); d.className = 'note fee'; text(d, feeNote);
+      el.result.appendChild(d);
+    }
     setBuy({ gameId: q.gameId, serverId: q.serverId, quantity: q.quantity });
   }
 
